@@ -11,14 +11,16 @@ function Despedir() {
 }
 //************************************************************************************************/
 //FUNCIONES COMO VARIABLES
-var miFuncion = Sumar;
-console.log(miFuncion(5, 5));
+var miFuncion = Sumar; //se puede guardar una funcion en una variable
+console.log(miFuncion(5, 5)); //se llama a la variable y se pasan los parametros
 //miFuncion = Saludar;
 //console.log(miFuncion("Juan"));
+//FUNCIONES ANONIMAS 
+//son funciones sin nombres guardadas en una variable
 var miVariable = function () {
     console.log("hola");
 };
-miVariable();
+miVariable(); //se llama a la variable que almacena la funcion anonima
 var varDespedir = Despedir();
 //console.log(varDespedir())
 var miOtraFuncion = Saludar;
@@ -27,8 +29,10 @@ console.log(miOtraFuncion("Juan"));
 //************************************************************************************************/
 //PARAMETROS OPCIONALES
 //En JavaScript todos los parametros son opcionales ver el ejemplo en el navegador
+//? significa que el parametro es opcional
+//todos los parametros opcionales tienen que ir juntos
 function NombreApellido(nombre, apellido) {
-    if (apellido) {
+    if (apellido) { //si le paso el apellido entra al if
         return nombre + ' ' + apellido;
     }
     else {
@@ -42,6 +46,7 @@ console.log(otroNombre);
 //************************************************************************************************/
 //************************************************************************************************/
 //PARAMETROS PREDETERMINADOS
+//por parametro ya esta definido algun valor
 function GenerarNombreCompleto(nombre, apellido, capitalizado) {
     if (capitalizado === void 0) { capitalizado = false; }
     var cadena;
@@ -58,12 +63,13 @@ console.log(GenerarNombreCompleto("tony", "stark", true));
 //************************************************************************************************/
 //************************************************************************************************/
 //PARAMETROS REST
+//solo se les puede pasar array de algun tipo
 function CompletarNombreApellido(nombre) {
     var losDemasParametros = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         losDemasParametros[_i - 1] = arguments[_i];
     }
-    return nombre + " " + losDemasParametros.join(" ");
+    return nombre + " " + losDemasParametros.join(" "); //convierte un array en una cadena de caracteres con delimitador
 }
 var superman = CompletarNombreApellido("Clark", "Joseph", "Kent");
 var ironman = CompletarNombreApellido("Anthony", "Edward", "Tony", "Stark");

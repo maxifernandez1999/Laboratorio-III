@@ -1,5 +1,6 @@
 "use strict";
 //LAS SIGUIENTES FUNCIONES SON EQUIVALENTES. 
+//FUNCION ANONIMA
 var f1 = function (i) { return i * i; };
 console.log(f1(2));
 //EL TIPO DE RETORNO ES INFERIDO POR EL COMPILADOR
