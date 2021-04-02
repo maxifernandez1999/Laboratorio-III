@@ -23,10 +23,18 @@ function ValidarCombo(valorCorrecto:string,valorIncorrecto:string):boolean{
 }
 
 function ObtenerTurnoSeleccionado():string{
-    if ((<HTMLInputElement>document.getElementById('rdoTurno')).checked){
-        return (<HTMLInputElement>document.getElementById('rdoTurno')).value;
-    }    
-    return '';
+    var coleccion = document.getElementsByName('rdoTurno');
+    var retorno:string = '';
+    for (let index = 0; index < coleccion.length; index++) {
+        var elemento:HTMLInputElement = <HTMLInputElement>coleccion[index];
+        if (elemento.checked) {
+            var valorElemento:string = elemento.value;
+            retorno = valorElemento;
+            break;
+        }
+    }
+    return retorno;
+       
 }
 
 function ObtenerSueldoMaximo(turno:string):number{
