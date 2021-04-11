@@ -1,18 +1,24 @@
 "use strict";
 function AdministrarValidaciones() {
     //validaciones campos vacios
+    //DNI
     if (!ValidarCamposVacios(document.getElementById('txtDni').value)) {
         alert('El campo DNI se encuentra vacio, por favor ingrese un Dni');
     }
+
+    //NOMBRE
     if (!ValidarCamposVacios(document.getElementById('nombre').value)) {
         alert('El campo NOMBRE se encuentra vacio, por favor ingrese un nombre');
     }
+    //APELLIDO
     if (!ValidarCamposVacios(document.getElementById('apellido').value)) {
         alert('El campo APELLIDO se encuentra vacio, por favor ingrese un apellido');
     }
+    //LEGAJO
     if (!ValidarCamposVacios(document.getElementById('txtLegajo').value)) {
         alert('El campo LEGAJO se encuentra vacio, por favor ingrese un legajo');
     }
+    //SUELDO
     if (!ValidarCamposVacios(document.getElementById('txtSueldo').value)) {
         alert('El campo SUELDO se encuentra vacio, por favor ingrese un sueldo');
     }
@@ -38,6 +44,7 @@ function AdministrarValidaciones() {
     if (!ValidarRangoNumerico(numeroValidarSueldo, numeroMinSueldo, numeroMaxSueldo)) {
         alert('El valor del Sueldo no esta en el rango correcto');
     }
+    
     //validar combobox
     var valorCombo = document.getElementById('cboSexo').value;
     if (!ValidarCombo(valorCombo, '---')) {
